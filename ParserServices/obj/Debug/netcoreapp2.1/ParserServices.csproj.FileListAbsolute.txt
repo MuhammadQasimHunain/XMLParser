@@ -1,0 +1,9 @@
+D:\Practice\XMLParser\ParserServices\bin\Debug\netcoreapp2.1\ParserServices.deps.json
+D:\Practice\XMLParser\ParserServices\bin\Debug\netcoreapp2.1\ParserServices.dll
+D:\Practice\XMLParser\ParserServices\bin\Debug\netcoreapp2.1\ParserServices.pdb
+D:\Practice\XMLParser\ParserServices\obj\Debug\netcoreapp2.1\ParserServices.AssemblyInfoInputs.cache
+D:\Practice\XMLParser\ParserServices\obj\Debug\netcoreapp2.1\ParserServices.AssemblyInfo.cs
+D:\Practice\XMLParser\ParserServices\obj\Debug\netcoreapp2.1\ParserServices.csproj.CoreCompileInputs.cache
+D:\Practice\XMLParser\ParserServices\obj\Debug\netcoreapp2.1\ParserServices.dll
+D:\Practice\XMLParser\ParserServices\obj\Debug\netcoreapp2.1\ParserServices.pdb
+D:\Practice\XMLParser\ParserServices\obj\Debug\netcoreapp2.1\ParserServices.csprojAssemblyReference.cache
