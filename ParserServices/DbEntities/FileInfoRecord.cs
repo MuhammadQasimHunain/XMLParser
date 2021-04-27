@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParserServices.DbEntities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -18,9 +19,9 @@ namespace XMLParserService.DbEntities
         public static List<FileInfoRecord> GetFileInfoRecords() 
         {
             List<FileInfoRecord> lst = new List<FileInfoRecord>();
-            string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
+            string connectionString = DbConstants.ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = @"SELECT [Id],[FileName],[Status],[CreatedTime] FROM [xmlParser].[QasimHunain].[tbl_FileInfoRecord]";
+            string sql = DbConstants.SelectFileInfoQuery;
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -45,14 +46,14 @@ namespace XMLParserService.DbEntities
         public static FileInfoRecord GetFileInfoRecord(int id)
         {
             FileInfoRecord fileInfoRecord = new FileInfoRecord();
-            string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
+            string connectionString = DbConstants.ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = @"SELECT [Id],[FileName],[Status],[CreatedTime] FROM [xmlParser].[QasimHunain].[tbl_FileInfoRecord]";
+            string sql = DbConstants.SelectFileInfoById;
             
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.CommandType = CommandType.Text;
-
+                command.Parameters.AddWithValue("@Id", id);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -72,9 +73,9 @@ namespace XMLParserService.DbEntities
         public int AddToDatabase()
         {
             int readerValue = 0;
-            string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
+            string connectionString = DbConstants.ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = string.Format(@"INSERT INTO [QasimHunain].[tbl_FileInfoRecord]([FileName],[Status],[CreatedTime]) VALUES (@FileName,@Status,@CreatedTime); select SCOPE_IDENTITY()");
+            string sql = DbConstants.InsertFileInfo;
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -92,12 +93,12 @@ namespace XMLParserService.DbEntities
             }
             return readerValue;
         }
-        public bool UpdateInDatabase()
+        public FileInfoRecord UpdateInDatabase()
         {
             int reader = 0;
-            string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
+            string connectionString = DbConstants.ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = string.Format(@"UPDATE [QasimHunain].[tbl_FileInfoRecord] SET [FileName] = @FileName ,[Status] = @Status ,[CreatedTime] = @CreatedTime  WHERE Id = @Id");
+            string sql = DbConstants.UpdateFileInfo;
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -110,15 +111,15 @@ namespace XMLParserService.DbEntities
                 reader = command.ExecuteNonQuery();
                 connection.Close();
             }
-            return reader != 0;
+            return this;
         }
 
         public bool Delete()
         {
             int reader = 0;
-            string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
+            string connectionString = DbConstants.ConnectionString;
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = string.Format(@"Delete [QasimHunain].[tbl_FileInfoRecord] WHERE Id = @Id");
+            string sql = DbConstants.DeleteFileInfo;
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
