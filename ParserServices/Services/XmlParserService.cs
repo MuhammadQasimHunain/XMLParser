@@ -23,54 +23,79 @@ namespace XMLParserService.Services
             ParserResponse parserResponse = new ParserResponse();
             try
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory());
-                XmlSchemaSet schema = new XmlSchemaSet();
-                schema.Add("", path + "\\XSDFiles\\ILR-2021.xsd");
-                XmlReader rd = XmlReader.Create(request.FileName);
-                XDocument doc = XDocument.Load(rd);
-                doc.Validate(schema, ValidationEventHandler);
+                int recordId = 0;
+                var schemaName = Path.Combine(Directory.GetCurrentDirectory()) + "\\XSDFiles\\ILR-2021.xsd";
+                if (ValidateXmlWithXsd(request.FileName, schemaName))
+                {
+                    recordId = RecordValidation(new FileInfoRecord
+                    {
+                        CreatedTime = DateTime.Now,
+                        FileName = Path.GetFileName(request.FileName),
+                        Status = true
+                    });
+                    parserResponse = new ParserResponse
+                    {
+                        Message = string.Format("XML file is validated."),
+                        RecordID = recordId,
+                        RequestFileName = Path.GetFileName(request.FileName),
+                        Status = true,
+                    };
+                }
+                else
+                {
+                    recordId = RecordValidation(new FileInfoRecord
+                    {
+                        CreatedTime = DateTime.Now,
+                        FileName = request.FileName,
+                        Status = false
+                    });
+                    parserResponse = new ParserResponse
+                    {
+                        Message = string.Format("Error validating file."),
+                        RecordID = recordId,
+                        RequestFileName = request.FileName,
+                        Status = true,
+                    };
+                }
+
             }
             catch (Exception exp)
             {
-                parserResponse.RecordID = int.Parse(exp.Message.Split('-')[0]);
-                parserResponse.Status = bool.Parse(exp.Message.Split('-')[1]);
-                parserResponse.Message = exp.Message.Split('-')[2];
+                parserResponse.RecordID = 0;
+                parserResponse.Status = false;
+                parserResponse.Message = "Error validating file.";
                 parserResponse.RequestFileName = request.FileName;
             }
             return parserResponse;
         }
-
-        static void ValidationEventHandler(object sender, ValidationEventArgs e)
+        private static bool ValidateXmlWithXsd(string xmlUri, string xsdUri)
         {
-            XmlSeverityType type = XmlSeverityType.Warning;
-            if (Enum.TryParse<XmlSeverityType>("Error", out type))
+            try
             {
-                if (type == XmlSeverityType.Error)
-                {
-                    int recordId = RecordValidation(new FileInfoRecord
-                    {
-                        CreatedTime = DateTime.Now,
-                        FileName = sender.ToString(),
-                        Status = false
-                    });
-                    throw new Exception(string.Format("{0}-{1}-{2}", recordId,false,e.Message));
-                }
+                XmlReaderSettings xmlSettings = new XmlReaderSettings();
+                xmlSettings.Schemas = new System.Xml.Schema.XmlSchemaSet();
+                xmlSettings.ValidationType = ValidationType.Schema;
+                XmlReader reader = XmlReader.Create(xmlUri, xmlSettings);
+
+                // Parse the file.
+                while (reader.Read()) ;
+
+                return true;
             }
-            else
+            catch (System.Xml.XmlException ex)
             {
-                int recordId = RecordValidation(new FileInfoRecord
-                {
-                    CreatedTime = DateTime.Now,
-                    FileName = sender.ToString(),
-                    Status = true
-                });
-                throw new Exception(string.Format("{0}-{1}-File is Validated.", recordId,true));
+                return false;
             }
         }
 
-        private static int RecordValidation(FileInfoRecord fileInfoRecord) 
+        private static int RecordValidation(FileInfoRecord fileInfoRecord)
         {
             return fileInfoRecord.AddToDatabase();
+        }
+
+        public List<FileInfoRecord> GetXMLFiles()
+        {
+            return FileInfoRecord.GetFileInfoRecords();
         }
     }
 }

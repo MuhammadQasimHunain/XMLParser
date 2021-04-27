@@ -71,32 +71,41 @@ namespace XMLParserService.DbEntities
         }
         public int AddToDatabase()
         {
-            int reader = 0;
+            int readerValue = 0;
             string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = string.Format(@"INSERT INTO [QasimHunain].[tbl_FileInfoRecord]([FileName],[Status],[CreatedTime]) VALUES ({0},{1},{2})",FileName,Status,CreatedTime);
+            string sql = string.Format(@"INSERT INTO [QasimHunain].[tbl_FileInfoRecord]([FileName],[Status],[CreatedTime]) VALUES (@FileName,@Status,@CreatedTime); select SCOPE_IDENTITY()");
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.CommandType = CommandType.Text;
-
+                command.Parameters.AddWithValue("@FileName", FileName);
+                command.Parameters.AddWithValue("@Status", Status.ToString());
+                command.Parameters.AddWithValue("@CreatedTime", CreatedTime);
                 connection.Open();
-                reader = command.ExecuteNonQuery();
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    readerValue = int.Parse(reader.GetValue(0).ToString());
+                }
                 connection.Close();
             }
-            return reader;
+            return readerValue;
         }
         public bool UpdateInDatabase()
         {
             int reader = 0;
             string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = string.Format(@"UPDATE [QasimHunain].[tbl_FileInfoRecord] SET [FileName] = {0} ,[Status] = {1} ,[CreatedTime] = {2}  WHERE Id = {3}", FileName, Status, CreatedTime,Id);
+            string sql = string.Format(@"UPDATE [QasimHunain].[tbl_FileInfoRecord] SET [FileName] = @FileName ,[Status] = @Status ,[CreatedTime] = @CreatedTime  WHERE Id = @Id");
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.CommandType = CommandType.Text;
-
+                command.Parameters.AddWithValue("@FileName", FileName);
+                command.Parameters.AddWithValue("@Status", Status.ToString());
+                command.Parameters.AddWithValue("@CreatedTime", CreatedTime);
+                command.Parameters.AddWithValue("@Id", Id);
                 connection.Open();
                 reader = command.ExecuteNonQuery();
                 connection.Close();
@@ -109,12 +118,12 @@ namespace XMLParserService.DbEntities
             int reader = 0;
             string connectionString = @"Server=104.219.233.61;Initial Catalog=xmlParser;User ID=QasimHunain;Password=Ncu5l0$8;Connection Timeout=30;";
             SqlConnection connection = new SqlConnection(connectionString);
-            string sql = string.Format(@"Delete [QasimHunain].[tbl_FileInfoRecord] WHERE Id = {0}", Id);
+            string sql = string.Format(@"Delete [QasimHunain].[tbl_FileInfoRecord] WHERE Id = @Id");
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
                 command.CommandType = CommandType.Text;
-
+                command.Parameters.AddWithValue("@Id", Id);
                 connection.Open();
                 reader = command.ExecuteNonQuery();
                 connection.Close();

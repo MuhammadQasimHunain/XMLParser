@@ -25,9 +25,11 @@ namespace TodoApi.Controllers
 
         #region snippet_GetAll
         [HttpGet]
-        public ActionResult<IActionResult> GetAll()
+        public IActionResult GetAll()
         {
-            return new JsonResult(new object());
+            var xmlParserService = new XmlParserService();
+            var result = xmlParserService.GetXMLFiles();
+            return new JsonResult(result);
         }
 
 
@@ -41,7 +43,7 @@ namespace TodoApi.Controllers
                 {
 
                     filePath = Path.Combine(Directory.GetCurrentDirectory() + @"\files",
-                        Path.GetRandomFileName() + "." + formFile.FileName.Split(".")[1]);
+                        formFile.FileName.Split(".")[0] + Path.GetRandomFileName() + "." + formFile.FileName.Split(".")[1]);
 
                     using (var stream = System.IO.File.Create(filePath))
                     {
