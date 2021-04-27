@@ -10,8 +10,6 @@ namespace TodoApi
         #region snippet_ConfigureServices
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<TodoContext>(opt =>
-            //    opt.UseInMemoryDatabase("TodoList"));
             services.AddControllers();
 
             // Register the Swagger generator, defining 1 or more Swagger documents

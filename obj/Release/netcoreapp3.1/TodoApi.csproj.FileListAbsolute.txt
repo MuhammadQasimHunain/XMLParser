@@ -37,12 +37,3 @@ E:\Get_started_with_Swashbuckle_and_ASP_NET_Core\obj\Release\netcoreapp3.1\TodoA
 E:\Get_started_with_Swashbuckle_and_ASP_NET_Core\obj\Release\netcoreapp3.1\TodoApi.xml
 E:\Get_started_with_Swashbuckle_and_ASP_NET_Core\obj\Release\netcoreapp3.1\TodoApi.pdb
 E:\Get_started_with_Swashbuckle_and_ASP_NET_Core\obj\Release\netcoreapp3.1\TodoApi.genruntimeconfig.cache
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.csprojAssemblyReference.cache
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.AssemblyInfoInputs.cache
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.AssemblyInfo.cs
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.csproj.CoreCompileInputs.cache
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.MvcApplicationPartsAssemblyInfo.cs
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.MvcApplicationPartsAssemblyInfo.cache
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.dll
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.xml
-D:\Practice\XMLParser\obj\Release\netcoreapp3.1\TodoApi.pdb

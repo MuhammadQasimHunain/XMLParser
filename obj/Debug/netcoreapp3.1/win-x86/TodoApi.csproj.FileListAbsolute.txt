@@ -1,6 +1,0 @@
-D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\win-x86\TodoApi.csprojAssemblyReference.cache
-D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\win-x86\TodoApi.AssemblyInfoInputs.cache
-D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\win-x86\TodoApi.AssemblyInfo.cs
-D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\win-x86\TodoApi.csproj.CoreCompileInputs.cache
-D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\win-x86\TodoApi.MvcApplicationPartsAssemblyInfo.cs
-D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\win-x86\TodoApi.MvcApplicationPartsAssemblyInfo.cache
