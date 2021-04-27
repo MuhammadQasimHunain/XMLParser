@@ -87,3 +87,5 @@ D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\TodoApi.dll
 D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\TodoApi.xml
 D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\TodoApi.pdb
 D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\TodoApi.genruntimeconfig.cache
+D:\Practice\XMLParser\bin\Debug\netcoreapp3.1\ParserServices\bin\Release\netcoreapp2.1\ParserServices.deps.json
+D:\Practice\XMLParser\obj\Debug\netcoreapp3.1\TodoApi.GeneratedMSBuildEditorConfig.editorconfig
