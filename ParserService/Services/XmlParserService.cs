@@ -5,6 +5,8 @@ using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
+using System.Xml.Serialization;
+using WebTools.ParserService.DbEntities;
 using XMLParserService.DbEntities;
 using XMLParserService.Interfaces;
 using XMLParserService.Model;
@@ -72,13 +74,34 @@ namespace XMLParserService.Services
         {
             try
             {
+                StringBuilder xmlFileData = new StringBuilder();
                 XmlReaderSettings xmlSettings = new XmlReaderSettings();
                 xmlSettings.Schemas = new System.Xml.Schema.XmlSchemaSet();
                 xmlSettings.ValidationType = ValidationType.Schema;
                 XmlReader reader = XmlReader.Create(xmlUri, xmlSettings);
+                using (StreamReader file = new StreamReader(xmlUri))
+                {
+                    string ln;
+                    while ((ln = file.ReadLine()) != null)
+                    {
+                        xmlFileData.Append(ln);
+                    }
+                    file.Close();
+                }
 
+                
+                XmlSerializer serializer = new XmlSerializer(typeof(Message));
+                List<Learners> lstLearners;
+                using (TextReader textReader = new StringReader(xmlFileData.ToString()))
+                {
+                    Message result = (Message)serializer.Deserialize(textReader);
+                    lstLearners = Learners.CastMessageToLearner(result);
+                }
                 // Parse the file.
-                while (reader.Read()) ;
+                foreach (var item in lstLearners)
+                {
+                    item.AddToDatabase();
+                }
 
                 return true;
             }
@@ -96,6 +119,14 @@ namespace XMLParserService.Services
         public List<FileInfoRecord> GetXMLFiles()
         {
             return FileInfoRecord.GetFileInfoRecords();
+        }
+        public List<Learners> GetLearners()
+        {
+            return Learners.GetLearners();
+        }
+        private static int RecordLearner(Learners learners)
+        {
+            return learners.AddToDatabase();
         }
     }
 }

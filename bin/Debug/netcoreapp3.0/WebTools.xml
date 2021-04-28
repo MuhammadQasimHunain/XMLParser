@@ -4,5 +4,587 @@
         <name>WebTools</name>
     </assembly>
     <members>
+        <member name="T:Message">
+            <remarks/>
+        </member>
+        <member name="P:Message.Header">
+            <remarks/>
+        </member>
+        <member name="P:Message.SourceFiles">
+            <remarks/>
+        </member>
+        <member name="P:Message.LearningProvider">
+            <remarks/>
+        </member>
+        <member name="P:Message.Learner">
+            <remarks/>
+        </member>
+        <member name="P:Message.LearnerDestinationandProgression">
+            <remarks/>
+        </member>
+        <member name="T:MessageHeader">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeader.CollectionDetails">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeader.Source">
+            <remarks/>
+        </member>
+        <member name="T:MessageHeaderCollectionDetails">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderCollectionDetails.Collection">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderCollectionDetails.Year">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderCollectionDetails.FilePreparationDate">
+            <remarks/>
+        </member>
+        <member name="T:MessageHeaderSource">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.ProtectiveMarking">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.UKPRN">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.SoftwareSupplier">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.SoftwarePackage">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.Release">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.SerialNo">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.DateTime">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.ReferenceData">
+            <remarks/>
+        </member>
+        <member name="P:MessageHeaderSource.ComponentSetVersion">
+            <remarks/>
+        </member>
+        <member name="T:MessageSourceFiles">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFiles.SourceFile">
+            <remarks/>
+        </member>
+        <member name="T:MessageSourceFilesSourceFile">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.SourceFileName">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.FilePreparationDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.SoftwareSupplier">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.SoftwarePackage">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.Release">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.SerialNo">
+            <remarks/>
+        </member>
+        <member name="P:MessageSourceFilesSourceFile.DateTime">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearningProvider">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearningProvider.UKPRN">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearner">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearner.Items">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearner.ItemsElementName">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerContactPreference">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerContactPreference.ContPrefType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerContactPreference.ContPrefCode">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLLDDandHealthProblem">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLLDDandHealthProblem.LLDDCat">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLLDDandHealthProblem.PrimaryLLDD">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLLDDandHealthProblem.PrimaryLLDDSpecified">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearnerEmploymentStatus">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatus.EmpStat">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatus.DateEmpStatApp">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatus.EmpId">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatus.EmpIdSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatus.EmploymentStatusMonitoring">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearnerEmploymentStatusEmploymentStatusMonitoring">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatusEmploymentStatusMonitoring.ESMType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerEmploymentStatusEmploymentStatusMonitoring.ESMCode">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearnerFAM">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerFAM.LearnFAMType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerFAM.LearnFAMCode">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearnerHE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerHE.UCASPERID">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerHE.TTACCOM">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerHE.LearnerHEFinancialSupport">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearnerHELearnerHEFinancialSupport">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerHELearnerHEFinancialSupport.FINTYPE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearnerHELearnerHEFinancialSupport.FINAMOUNT">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearningDelivery">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearnAimRef">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.AimType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.AimSeqNumber">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearnStartDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.OrigLearnStartDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.OrigLearnStartDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearnPlanEndDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.FundModel">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.PHours">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.PHoursSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.ProgType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.ProgTypeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.StdCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.StdCodeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.FworkCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.FworkCodeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.PwayCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.PwayCodeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.DelLocPostCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.EPAOrgID">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.PriorLearnFundAdj">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.PriorLearnFundAdjSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.ConRefNumber">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LSDPostcode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.CompStatus">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearnActEndDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearnActEndDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.WithdrawReason">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.WithdrawReasonSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.Outcome">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.OutcomeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.OutGrade">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.AchDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.AchDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.SWSupAimId">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearningDeliveryFAM">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.ProviderSpecDeliveryMonitoring">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearningDeliveryHE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.AppFinRecord">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDelivery.LearningDeliveryWorkPlacement">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearningDeliveryLearningDeliveryFAM">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryFAM.LearnDelFAMType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryFAM.LearnDelFAMCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryFAM.LearnDelFAMDateFrom">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryFAM.LearnDelFAMDateFromSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryFAM.LearnDelFAMDateTo">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryFAM.LearnDelFAMDateToSpecified">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearningDeliveryProviderSpecDeliveryMonitoring">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryProviderSpecDeliveryMonitoring.ProvSpecDelMonOccur">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryProviderSpecDeliveryMonitoring.ProvSpecDelMon">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearningDeliveryLearningDeliveryHE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.NUMHUS">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.SSN">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.QUALENT3">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.SOC2000">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.SEC">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.UCASAPPID">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.TYPEYR">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.MODESTUD">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.FUNDLEV">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.FUNDCOMP">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.STULOAD">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.YEARSTU">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.MSTUFEE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.PCFLDCS">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.SPECFEE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.NETFEE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.GROSSFEE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.DOMICILE">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.ELQ">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryHE.HEPostCode">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearningDeliveryAppFinRecord">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryAppFinRecord.AFinType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryAppFinRecord.AFinCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryAppFinRecord.AFinDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryAppFinRecord.AFinAmount">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement.WorkPlaceStartDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement.WorkPlaceEndDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement.WorkPlaceEndDateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement.WorkPlaceHours">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement.WorkPlaceMode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerLearningDeliveryLearningDeliveryWorkPlacement.WorkPlaceEmpId">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerProviderSpecLearnerMonitoring">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerProviderSpecLearnerMonitoring.ProvSpecLearnMonOccur">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerProviderSpecLearnerMonitoring.ProvSpecLearnMon">
+            <remarks/>
+        </member>
+        <member name="T:ItemsChoiceType">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.ALSCost">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.Accom">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.AddLine1">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.AddLine2">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.AddLine3">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.CampId">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.ContactPreference">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.DateOfBirth">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.Email">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.EngGrade">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.Ethnicity">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.FamilyName">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.GivenNames">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LLDDHealthProb">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LLDDandHealthProblem">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LearnRefNumber">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LearnerEmploymentStatus">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LearnerFAM">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LearnerHE">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.LearningDelivery">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.MathGrade">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.NINumber">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.PMUKPRN">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.PlanEEPHours">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.PlanLearnHours">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.Postcode">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.PostcodePrior">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.PrevLearnRefNumber">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.PriorAttain">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.ProviderSpecLearnerMonitoring">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.Sex">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.TelNo">
+            <remarks/>
+        </member>
+        <member name="F:ItemsChoiceType.ULN">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerDestinationandProgression">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgression.LearnRefNumber">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgression.ULN">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgression.DPOutcome">
+            <remarks/>
+        </member>
+        <member name="T:MessageLearnerDestinationandProgressionDPOutcome">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgressionDPOutcome.OutType">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgressionDPOutcome.OutCode">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgressionDPOutcome.OutStartDate">
+            <remarks/>
+        </member>
+        <member name="P:MessageLearnerDestinationandProgressionDPOutcome.OutCollDate">
+            <remarks/>
+        </member>
     </members>
 </doc>

@@ -26,15 +26,25 @@ namespace WebTools.Controllers
 
         #region snippet_GetAll
         [HttpGet]
-        public IActionResult GetAll()
+        [Route("GetAllFiles")]
+        public IActionResult GetAllFiles()
         {
             var xmlParserService = new XmlParserService();
             var result = xmlParserService.GetXMLFiles();
             return new JsonResult(result);
         }
 
+        [HttpGet]
+        [Route("GetAllLearner")]
+        public IActionResult GetAllLearner()
+        {
+            var xmlParserService = new XmlParserService();
+            var result = xmlParserService.GetLearners();
+            return new JsonResult(result);
+        }
 
         [HttpPost]
+        [Route("Validate")]
         public async Task<IActionResult> Validate(IFormFile formFile)
         {
             try

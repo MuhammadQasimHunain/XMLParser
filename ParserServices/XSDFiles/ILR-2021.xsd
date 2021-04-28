@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="ESFA/ILR/2020-21" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Message">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Header">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CollectionDetails">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Collection" type="xs:string" />
+                    <xs:element name="Year" type="xs:unsignedShort" />
+                    <xs:element name="FilePreparationDate" type="xs:date" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Source">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ProtectiveMarking" type="xs:string" />
+                    <xs:element name="UKPRN" type="xs:unsignedInt" />
+                    <xs:element name="SoftwareSupplier" type="xs:string" />
+                    <xs:element name="SoftwarePackage" type="xs:string" />
+                    <xs:element name="Release" type="xs:unsignedByte" />
+                    <xs:element name="SerialNo" type="xs:unsignedByte" />
+                    <xs:element name="DateTime" type="xs:dateTime" />
+                    <xs:element name="ReferenceData" type="xs:string" />
+                    <xs:element name="ComponentSetVersion" type="xs:unsignedByte" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SourceFiles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SourceFile">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="SourceFileName" type="xs:string" />
+                    <xs:element name="FilePreparationDate" type="xs:date" />
+                    <xs:element name="SoftwareSupplier" type="xs:string" />
+                    <xs:element name="SoftwarePackage" type="xs:string" />
+                    <xs:element name="Release" type="xs:unsignedByte" />
+                    <xs:element name="SerialNo" type="xs:unsignedByte" />
+                    <xs:element name="DateTime" type="xs:dateTime" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LearningProvider">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UKPRN" type="xs:unsignedInt" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="Learner">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:choice maxOccurs="unbounded">
+                <xs:element name="LearnRefNumber" type="xs:string" />
+                <xs:element name="PrevLearnRefNumber" type="xs:unsignedInt" />
+                <xs:element name="PMUKPRN" type="xs:unsignedInt" />
+                <xs:element name="CampId" type="xs:string" />
+                <xs:element name="ULN" type="xs:unsignedLong" />
+                <xs:element name="FamilyName" type="xs:string" />
+                <xs:element name="GivenNames" type="xs:string" />
+                <xs:element name="DateOfBirth" type="xs:date" />
+                <xs:element name="Ethnicity" type="xs:unsignedByte" />
+                <xs:element name="Sex" type="xs:string" />
+                <xs:element name="LLDDHealthProb" type="xs:unsignedByte" />
+                <xs:element name="NINumber" type="xs:string" />
+                <xs:element name="PriorAttain" type="xs:unsignedByte" />
+                <xs:element name="Accom" type="xs:unsignedByte" />
+                <xs:element name="ALSCost" type="xs:unsignedShort" />
+                <xs:element name="PlanLearnHours" type="xs:unsignedShort" />
+                <xs:element name="PlanEEPHours" type="xs:unsignedByte" />
+                <xs:element name="MathGrade" type="xs:string" />
+                <xs:element name="EngGrade" type="xs:string" />
+                <xs:element name="PostcodePrior" type="xs:string" />
+                <xs:element name="Postcode" type="xs:string" />
+                <xs:element name="AddLine1" type="xs:string" />
+                <xs:element name="LLDDandHealthProblem">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="LLDDCat" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="PrimaryLLDD" type="xs:unsignedByte" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="AddLine2" type="xs:string" />
+                <xs:element name="AddLine3" type="xs:string" />
+                <xs:element name="TelNo" type="xs:unsignedInt" />
+                <xs:element name="Email" type="xs:string" />
+                <xs:element maxOccurs="unbounded" name="ContactPreference">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ContPrefType" type="xs:string" />
+                      <xs:element name="ContPrefCode" type="xs:unsignedByte" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="ProviderSpecLearnerMonitoring">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ProvSpecLearnMonOccur" type="xs:string" />
+                      <xs:element name="ProvSpecLearnMon" type="xs:string" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="LearnerFAM">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="LearnFAMType" type="xs:string" />
+                      <xs:element name="LearnFAMCode" type="xs:unsignedByte" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="LearnerEmploymentStatus">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="EmpStat" type="xs:unsignedByte" />
+                      <xs:element name="DateEmpStatApp" type="xs:date" />
+                      <xs:element minOccurs="0" name="EmpId" type="xs:unsignedInt" />
+                      <xs:element maxOccurs="unbounded" name="EmploymentStatusMonitoring">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="ESMType" type="xs:string" />
+                            <xs:element name="ESMCode" type="xs:unsignedByte" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="unbounded" name="LearningDelivery">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="LearnAimRef" type="xs:string" />
+                      <xs:element name="AimType" type="xs:unsignedByte" />
+                      <xs:element name="AimSeqNumber" type="xs:unsignedByte" />
+                      <xs:element name="LearnStartDate" type="xs:date" />
+                      <xs:element minOccurs="0" name="OrigLearnStartDate" type="xs:date" />
+                      <xs:element name="LearnPlanEndDate" type="xs:date" />
+                      <xs:element name="FundModel" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="PHours" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="ProgType" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="StdCode" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="FworkCode" type="xs:unsignedShort" />
+                      <xs:element minOccurs="0" name="PwayCode" type="xs:unsignedByte" />
+                      <xs:element name="DelLocPostCode" type="xs:string" />
+                      <xs:element minOccurs="0" name="EPAOrgID" type="xs:string" />
+                      <xs:element minOccurs="0" name="PriorLearnFundAdj" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="ConRefNumber" type="xs:string" />
+                      <xs:element minOccurs="0" name="LSDPostcode" type="xs:string" />
+                      <xs:element name="CompStatus" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="LearnActEndDate" type="xs:date" />
+                      <xs:element minOccurs="0" name="WithdrawReason" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="Outcome" type="xs:unsignedByte" />
+                      <xs:element minOccurs="0" name="OutGrade" type="xs:string" />
+                      <xs:element minOccurs="0" name="AchDate" type="xs:date" />
+                      <xs:element name="SWSupAimId" type="xs:string" />
+                      <xs:element minOccurs="0" maxOccurs="unbounded" name="LearningDeliveryFAM">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="LearnDelFAMType" type="xs:string" />
+                            <xs:element name="LearnDelFAMCode" type="xs:unsignedShort" />
+                            <xs:element minOccurs="0" name="LearnDelFAMDateFrom" type="xs:date" />
+                            <xs:element minOccurs="0" name="LearnDelFAMDateTo" type="xs:date" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProviderSpecDeliveryMonitoring">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="ProvSpecDelMonOccur" type="xs:string" />
+                            <xs:element name="ProvSpecDelMon" type="xs:string" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="LearningDeliveryHE">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="NUMHUS" type="xs:unsignedShort" />
+                            <xs:element name="SSN" type="xs:string" />
+                            <xs:element name="QUALENT3" type="xs:string" />
+                            <xs:element name="SOC2000" type="xs:unsignedByte" />
+                            <xs:element name="SEC" type="xs:unsignedByte" />
+                            <xs:element name="UCASAPPID" type="xs:unsignedByte" />
+                            <xs:element name="TYPEYR" type="xs:unsignedByte" />
+                            <xs:element name="MODESTUD" type="xs:unsignedByte" />
+                            <xs:element name="FUNDLEV" type="xs:unsignedByte" />
+                            <xs:element name="FUNDCOMP" type="xs:unsignedByte" />
+                            <xs:element name="STULOAD" type="xs:unsignedByte" />
+                            <xs:element name="YEARSTU" type="xs:unsignedByte" />
+                            <xs:element name="MSTUFEE" type="xs:unsignedByte" />
+                            <xs:element name="PCFLDCS" type="xs:unsignedByte" />
+                            <xs:element name="SPECFEE" type="xs:unsignedByte" />
+                            <xs:element name="NETFEE" type="xs:unsignedByte" />
+                            <xs:element name="GROSSFEE" type="xs:unsignedShort" />
+                            <xs:element name="DOMICILE" type="xs:string" />
+                            <xs:element name="ELQ" type="xs:unsignedByte" />
+                            <xs:element name="HEPostCode" type="xs:string" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppFinRecord">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="AFinType" type="xs:string" />
+                            <xs:element name="AFinCode" type="xs:unsignedByte" />
+                            <xs:element name="AFinDate" type="xs:date" />
+                            <xs:element name="AFinAmount" type="xs:unsignedShort" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element minOccurs="0" name="LearningDeliveryWorkPlacement">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="WorkPlaceStartDate" type="xs:date" />
+                            <xs:element minOccurs="0" name="WorkPlaceEndDate" type="xs:date" />
+                            <xs:element name="WorkPlaceHours" type="xs:unsignedShort" />
+                            <xs:element name="WorkPlaceMode" type="xs:unsignedByte" />
+                            <xs:element name="WorkPlaceEmpId" type="xs:unsignedInt" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="LearnerHE">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="UCASPERID" type="xs:unsignedInt" />
+                      <xs:element name="TTACCOM" type="xs:unsignedByte" />
+                      <xs:element name="LearnerHEFinancialSupport">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="FINTYPE" type="xs:unsignedByte" />
+                            <xs:element name="FINAMOUNT" type="xs:unsignedShort" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element maxOccurs="unbounded" name="LearnerDestinationandProgression">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LearnRefNumber" type="xs:string" />
+              <xs:element name="ULN" type="xs:unsignedLong" />
+              <xs:element maxOccurs="unbounded" name="DPOutcome">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="OutType" type="xs:string" />
+                    <xs:element name="OutCode" type="xs:unsignedByte" />
+                    <xs:element name="OutStartDate" type="xs:date" />
+                    <xs:element name="OutCollDate" type="xs:date" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
