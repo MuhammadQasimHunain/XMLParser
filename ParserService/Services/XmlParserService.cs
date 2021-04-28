@@ -54,7 +54,7 @@ namespace XMLParserService.Services
                         Message = string.Format("Error validating file."),
                         RecordID = recordId,
                         RequestFileName = request.FileName,
-                        Status = true,
+                        Status = false,
                     };
                 }
 

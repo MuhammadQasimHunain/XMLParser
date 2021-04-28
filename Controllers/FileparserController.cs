@@ -37,28 +37,35 @@ namespace WebTools.Controllers
         [HttpPost]
         public async Task<IActionResult> Validate(IFormFile formFile)
         {
-            string filePath = string.Empty;
-            if (formFile != null)
+            try
             {
-                if (formFile.Length > 0)
+                string filePath = string.Empty;
+                if (formFile != null)
                 {
-
-                    filePath = Path.Combine(Directory.GetCurrentDirectory() + @"\files",
-                        formFile.FileName.Split(".")[0] + Path.GetRandomFileName() + "." + formFile.FileName.Split(".")[1]);
-
-                    using (var stream = System.IO.File.Create(filePath))
+                    if (formFile.Length > 0)
                     {
-                        await formFile.CopyToAsync(stream);
+
+                        filePath = Path.Combine(Directory.GetCurrentDirectory() + @"\files",
+                            formFile.FileName.Split(".")[0] + Path.GetRandomFileName() + "." + formFile.FileName.Split(".")[1]);
+
+                        using (var stream = System.IO.File.Create(filePath))
+                        {
+                            await formFile.CopyToAsync(stream);
+                        }
                     }
                 }
+                var xmlParserService = new XmlParserService();
+                var result = xmlParserService.ParseXML(
+                    new ParserRequest
+                    {
+                        FileName = filePath
+                    });
+                return new JsonResult(result);
             }
-            var xmlParserService = new XmlParserService();
-            var result = xmlParserService.ParseXML(
-                new ParserRequest
-                {
-                    FileName = filePath
-                });
-            return new JsonResult(result);
+            catch (Exception exp)
+            {
+                return new JsonResult(exp.Message);
+            }
         }
         #endregion
     }
